@@ -1,0 +1,28 @@
+.heading{
+    font-size: 23px;
+    width: 100%;
+    margin: 0px;
+    box-shadow: 5px 5px 5px grey; /*adicionar padding*/
+}
+
+.note{
+    font-size: 15px;
+    color: #00686c;
+}
+
+canvas{
+    border: 5px solid white;
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px grey;
+}
+
+.copyRightFooter{
+    position: fixed;
+    color: #d6aa26;
+    bottom: 0;
+    width: 100%;
+    background-color: #30374f;
+    line-height: 3;
+    text-align: center;
+}
+
