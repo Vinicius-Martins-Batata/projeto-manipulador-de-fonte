@@ -1,5 +1,4 @@
-noseX=0; //Nossa primeira tarefa será buscar as coordenadas x e y do nariz e, usando essas coordenadas, mover o quadrado na tela.
-noseY=0;
+
 difference = 0;
 rightWristX = 0; //pulso direito
 leftWristX = 0;
@@ -35,17 +34,10 @@ function gotPoses(results)
   if(results.length > 0)
   {
     console.log(results);
-    /*Então no objeto pose há duas partes importantes keypoints e 17 partes do corpo com coordenadas x e y.
-    
-    ● Nós queremos as coordenadas do nariz, então dentro de results -> dentro de index 0 ->
-    dentro de pose -> há nose (nariz).*/
-    noseX = results[0].pose.nose.x; /*Nós buscamos o código para obter a coordenada x de nose, então vamos atualizar a
-    variável noseX com este código, na função gotPoses().*/
-    noseY = results[0].pose.nose.y; 
-    console.log("noseX = " + noseX +" noseY = " + noseY);//Imprimimos no console as variáveis
-
+    /*Então no objeto pose há duas partes importantes keypoints e 17 partes do corpo com coordenadas x e 
     leftWristX = results[0].pose.leftWrist.x;/*wrist = pulso . Agora nós buscamos o código para obter a coordenada x de leftWrist, então vamos atualizar a
     variável noseX com este código, na função gotPoses().*/
+    leftWristX = results[0].pose.leftWrist.x;
 
     rightWristX = results[0].pose.rightWrist.x; /*Agora nós buscamos o código para obter a coordenada x de rightWrist, então 
     vamos atualizar a variável rightWristX com este código, na função gotPoses().*/
@@ -60,16 +52,12 @@ function gotPoses(results)
 }
 
 function draw() {
-background('yellow'); //background()" é uma função predefinida de p5.js, usamos para fornecer cor à tela.
+background('green'); //background()" é uma função predefinida de p5.js, usamos para fornecer cor à tela.
 
-  document.getElementById("square_side").innerHTML = "Largura e altura serão = " + difference +"px";
+  document.getElementById("tamanhoFonte").innerHTML = "Tamanho da fonte será = " + difference +"px";
+  textSize(difference);
   fill('#0057EC');
-  stroke('#2B79FF'); /*stroke() é uma função p5.js usada para definir a cor da borda. Usaremos esta função para definir
-  a cor da borda do quadrado. Dentro da função stroke() você pode passar código RGB, código HEX, código RGBA*/
-  
-  square(noseX, noseY, difference); /* square() é uma função p5.js usada para desenhar um quadrado. Sintaxe de square(): 
-  square(coordenada x, coordenada y, lado);*/
-
+  text('Vinícius', 50, 400);
 }
 
 /*1. Adicionar código para acessar a webcam
